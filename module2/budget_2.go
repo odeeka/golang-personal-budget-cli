@@ -54,6 +54,11 @@ var errDuplicateEntry = errors.New("Cannot add duplicate entry")
 // AddItem adds an item to the current budget
 func (b *Budget) AddItem(description string, price float32) error {
 
+	newItem := Item{
+		Description: description,
+		Price:       price,
+	}
+	append(b.Items, newItem)
 	return nil
 }
 
